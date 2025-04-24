@@ -1,0 +1,188 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\IA\\Animal2\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\models\\animalscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:models\\animalscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\controllers\\shelterstaffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:controllers\\shelterstaffcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\dto\\account\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:dto\\account\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\dto\\account\\newuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:dto\\account\\newuserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\service\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:service\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\dto\\account\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:dto\\account\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\controllers\\breedcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:controllers\\breedcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 1072,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\IA\\Animal2\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\IA\\Animal2\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAmwBsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T09:59:45.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AnimalsContext.cs",
+              "DocumentMoniker": "E:\\IA\\Animal2\\Models\\AnimalsContext.cs",
+              "RelativeDocumentMoniker": "Models\\AnimalsContext.cs",
+              "ToolTip": "E:\\IA\\Animal2\\Models\\AnimalsContext.cs",
+              "RelativeToolTip": "Models\\AnimalsContext.cs",
+              "ViewState": "AgIAAFgAAAAAAAAAAAAmwGwAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T17:26:35.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RegisterDto.cs",
+              "DocumentMoniker": "E:\\IA\\Animal2\\Dto\\Account\\RegisterDto.cs",
+              "RelativeDocumentMoniker": "Dto\\Account\\RegisterDto.cs",
+              "ToolTip": "E:\\IA\\Animal2\\Dto\\Account\\RegisterDto.cs",
+              "RelativeToolTip": "Dto\\Account\\RegisterDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T12:10:18.404Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LoginDto.cs",
+              "DocumentMoniker": "E:\\IA\\Animal2\\Dto\\Account\\LoginDto.cs",
+              "RelativeDocumentMoniker": "Dto\\Account\\LoginDto.cs",
+              "ToolTip": "E:\\IA\\Animal2\\Dto\\Account\\LoginDto.cs",
+              "RelativeToolTip": "Dto\\Account\\LoginDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T12:10:14.064Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\IA\\Animal2\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "E:\\IA\\Animal2\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-23T02:05:22.664Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "E:\\IA\\Animal2\\Service\\TokenService.cs",
+              "RelativeDocumentMoniker": "Service\\TokenService.cs",
+              "ToolTip": "E:\\IA\\Animal2\\Service\\TokenService.cs",
+              "RelativeToolTip": "Service\\TokenService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACUAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T01:41:38.042Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "E:\\IA\\Animal2\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "E:\\IA\\Animal2\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAIwFQAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T01:11:23.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BreedController.cs",
+              "DocumentMoniker": "E:\\IA\\Animal2\\Controllers\\BreedController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BreedController.cs",
+              "ToolTip": "E:\\IA\\Animal2\\Controllers\\BreedController.cs",
+              "RelativeToolTip": "Controllers\\BreedController.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T01:04:19.086Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ShelterStaffController.cs",
+              "DocumentMoniker": "E:\\IA\\Animal2\\Controllers\\ShelterStaffController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ShelterStaffController.cs",
+              "ToolTip": "E:\\IA\\Animal2\\Controllers\\ShelterStaffController.cs",
+              "RelativeToolTip": "Controllers\\ShelterStaffController.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAIwEQAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T00:54:53.462Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "NewUserDto.cs",
+              "DocumentMoniker": "E:\\IA\\Animal2\\Dto\\Account\\NewUserDto.cs",
+              "RelativeDocumentMoniker": "Dto\\Account\\NewUserDto.cs",
+              "ToolTip": "E:\\IA\\Animal2\\Dto\\Account\\NewUserDto.cs",
+              "RelativeToolTip": "Dto\\Account\\NewUserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T12:34:40.045Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
