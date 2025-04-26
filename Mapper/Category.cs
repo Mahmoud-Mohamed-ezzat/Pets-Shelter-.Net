@@ -14,7 +14,7 @@ namespace Animal2.Mapper
             {
                 Id = category.Id,
                 CategoryName = category.CategoryName,
-                Breeds = (List<Dto.Breed.BreedDto>)category.Breed
+                Breeds = category.Breed.Select(b=>b.ToBreedDto()).ToList(),
             };
 
         }

@@ -13,7 +13,16 @@ namespace Animal2.Mapper
                 UserName = shelterstaff.UserName,
                 PhoneNumber = shelterstaff.PhoneNumber,
                 Email=shelterstaff.Email,
-                ShelterAddress=shelterstaff.ShelterAddress,
+                ShelterAddress=shelterstaff.ShelterAddress
+            };
+        }  public static ShelterstaffRetrieve ToshelterstaffRetrieve2(this Customer shelterstaff)
+        {
+            return new ShelterstaffRetrieve
+            {
+                UserName = shelterstaff.UserName,
+                PhoneNumber = shelterstaff.PhoneNumber,
+                Email=shelterstaff.Email,
+                ShelterAddress=shelterstaff.ShelterAddress
             };
         }
     }

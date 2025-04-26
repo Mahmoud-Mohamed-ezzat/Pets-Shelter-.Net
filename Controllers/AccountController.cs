@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Animal2.Controllers
 {
-    [Route("api/account")]
+    [Route("api/[controller]")]
     [ApiController]
     public class AccountController : ControllerBase
     {
@@ -54,7 +54,7 @@ namespace Animal2.Controllers
                         {
                             Email = Adopter.Email,
                             UserName = Adopter.UserName,
-                            Token = _Token.CreateToken(Adopter),
+                            Token = await _Token.CreateToken(Adopter),
                             Role = ["Adpter"]
 
                         });
@@ -83,6 +83,7 @@ namespace Animal2.Controllers
         {
 
             if (!ModelState.IsValid) return BadRequest(ModelState);
+
             var customer = await _userManager.Users.FirstOrDefaultAsync(c => c.Email.ToLower() == loginDto.Email.ToLower());
             if (customer == null) return Unauthorized("User Notfound");
             var result = await _signInManager.CheckPasswordSignInAsync(customer, loginDto.Password, false);
@@ -92,7 +93,7 @@ namespace Animal2.Controllers
                 {
                     UserName = customer.UserName,
                     Email = customer.Email,
-                    Token = _Token.CreateToken(customer),
+                    Token = await _Token.CreateToken(customer),
                     Role = await _userManager.GetRolesAsync(customer)
                 }
                 );

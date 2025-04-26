@@ -4,11 +4,13 @@ using Animal2.Dto.Category;
 using Animal2.Mapper;
 using Animal2.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Animal2.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
     public class CategoryController : ControllerBase   //this controller authorized to Admin Only 
     {
 
@@ -18,25 +20,29 @@ namespace Animal2.Controllers
         {
             _context = context;
         }
-        //[HttpGet]
-        //public async Task<IActionResult> GetForSearch(string search)
-        //{
 
-        //    var Categories= _context.AnimalCategories.AsQueryable();
-        //    Categories = Categories.Where(b => b.CategoryName.Contains(search));
-        //    return Ok(Categories.ToListAsync());
-        //}
-            [HttpGet]
-        public async Task<IActionResult> Get(string search) // retrieve All Categories 
+        [Authorize]
+        [HttpGet ("GetAll")]
+        public async Task<IActionResult> GetAll()
         {
-            
-            var categories =await _context.AnimalCategories.Include(a=>a.Breed).Where(c=>c.CategoryName.Contains(search)).ToListAsync();
-            var categoriesDto = categories.Select(a => a.toCategoryDto());
 
-            return Ok(categories);
-
+            var Categories =await _context.AnimalCategories.Include(a=>a.Breed).ToListAsync();
+            var categoriesDto = Categories.Select(a => a.toCategoryDto());
+            return Ok(categoriesDto);
         }
 
+        [Authorize]
+        [HttpGet("Get")]
+        public async Task<IActionResult> Get(string search) // retrieve All Categories 
+        {
+
+        var categories =await _context.AnimalCategories.Include(a=>a.Breed).Where(c=>c.CategoryName.Contains(search)).ToListAsync();
+            var categoriesDto = categories.Select(a => a.toCategoryDto());
+
+            return Ok(categoriesDto);
+
+        }
+        [Authorize]
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetID(int id) // retrieve All Categories 
         {
@@ -47,7 +53,7 @@ namespace Animal2.Controllers
             return Ok(category);
 
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> CreateCategory([FromBody] CreateCategoryDto category) // Create Category 
         {
@@ -56,9 +62,9 @@ namespace Animal2.Controllers
             var categorymodel = category.CreateCategoryDto();
             await _context.AnimalCategories.AddAsync(categorymodel);
             await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(Get), new { id = categorymodel.Id }, categorymodel.toCategoryDto());
+            return CreatedAtAction(nameof(GetID), new { id = categorymodel.Id }, categorymodel.toCategoryDto());
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteCategory(int id) // Delete Category
         {
@@ -71,7 +77,7 @@ namespace Animal2.Controllers
             return Ok();
 
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id:int}")]
         public async Task<IActionResult> UpdateCategory(int id, [FromBody] CreateCategoryDto categoryDto) // Update Category
         {

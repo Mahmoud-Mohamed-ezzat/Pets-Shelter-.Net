@@ -179,3 +179,8 @@ E:\IA\Animal2\obj\Debug\net8.0\refint\Animal2.dll
 E:\IA\Animal2\obj\Debug\net8.0\Animal2.pdb
 E:\IA\Animal2\obj\Debug\net8.0\Animal2.genruntimeconfig.cache
 E:\IA\Animal2\obj\Debug\net8.0\ref\Animal2.dll
+E:\IA\Animal2\bin\Debug\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+E:\IA\Animal2\bin\Debug\net8.0\Microsoft.Extensions.Hosting.Abstractions.dll
+E:\IA\Animal2\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+E:\IA\Animal2\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll
+E:\IA\Animal2\obj\Debug\net8.0\Animal2.sourcelink.json

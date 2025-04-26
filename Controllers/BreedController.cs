@@ -1,6 +1,7 @@
 ﻿using Animal2.Dto.Breed;
 using Animal2.Mapper;
 using Animal2.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,14 +16,15 @@ namespace Animal2.Controllers
         {
             _context = context;
         }
-        //[HttpGet]
-        //public async Task<IActionResult> GetForSearch(string search)
-        //{
+        [Authorize]
+        [HttpGet("getall")]
+        public async Task<IActionResult> GetAll()
+        {
+            var breeds = await _context.Breeds.Include(b => b.AnimalCategory).Select(b => new { Id=b.Id,Name=b.Name, CategoryName=b.AnimalCategory.CategoryName ,CategoryId=b.AnimalCategoryId}).ToListAsync();
+            return Ok(breeds);
+        }
 
-        //    var breeds =  _context.Breeds.Include(b => b.AnimalCategory.CategoryName).AsQueryable();
-        //    breeds = breeds.Where(b => b.Name.Contains(search));
-        //    return  Ok(breeds);
-        //}
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> Get(string search)
         {
@@ -31,7 +33,7 @@ namespace Animal2.Controllers
            var BreedDto =breeds.Select(b=>b.ToBreedDto()).ToList();
             return Ok(BreedDto);
         }
-
+        [Authorize]
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -40,6 +42,7 @@ namespace Animal2.Controllers
             var breeddto=breed.ToBreedDto();
             return Ok(breeddto);
         }
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> CreateBreed([FromBody] CreateBreedDto breeddto)
         {
@@ -48,6 +51,7 @@ namespace Animal2.Controllers
             await _context.SaveChangesAsync();
             return CreatedAtAction(nameof(GetById), new { id = BreedModel.Id }, BreedModel.Name);
         }
+        [Authorize(Roles = "Admin")]
         [HttpDelete]
         [Route("{id:int}")]
         public async Task<IActionResult> DeleteBreed(int id)
@@ -59,18 +63,18 @@ namespace Animal2.Controllers
             await _context.SaveChangesAsync();
             return Ok();
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPut]
         [Route("{id:int}")]
-        public async Task<IActionResult> UpdateBreed(int id, [FromForm] BreedDto breedDto)
+        public async Task<IActionResult> UpdateBreed(int id, [FromForm] CreateBreedDto createBreedDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
             var breedmodel = await _context.Breeds.FirstOrDefaultAsync(b => b.Id == id);
             if (breedmodel == null) { return NotFound(); }
 
-            breedmodel.Name = breedDto.Name;
-            breedmodel.AnimalCategoryId = breedDto.AnimalCategoryId;
+            breedmodel.Name = createBreedDto.Name;
+            breedmodel.AnimalCategoryId = createBreedDto.AnimalCategoryId;
             await _context.SaveChangesAsync();
 
 

@@ -10,7 +10,7 @@ namespace Animal2.Controllers
 {
 
 
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class ShelterStaffController : ControllerBase
@@ -21,7 +21,7 @@ namespace Animal2.Controllers
             _userManager = userManager;
         }
 
-
+        [Authorize(Roles = "Admin")]
         [HttpPost("RegisterShelterstaff")]
         public async Task<IActionResult> RegisterShelterStaff([FromBody] ShelterStaffDto Sheltermodel)
         {
@@ -61,7 +61,7 @@ namespace Animal2.Controllers
             }
         }
 
-
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -69,33 +69,47 @@ namespace Animal2.Controllers
             var ShelterstaffDto = Shelterstaffs.Select(b => b.ToshelterstaffRetrieve()).ToList();
             return Ok(ShelterstaffDto);
         }
-
-        [HttpGet("{id:string}")]
+        [Authorize]
+        [HttpGet("{Id}")]
         public async Task<IActionResult> GetById(string Id)
         {
-           var Shelterstaff=await _userManager.FindByIdAsync(Id);
-            return Ok(Shelterstaff.ToshelterstaffRetrieve);
-        }
+            try
+            {
+                var shelterStaff = await _userManager.FindByIdAsync(Id);
 
-         [HttpDelete("{Id:string}")]
+                if (shelterStaff == null)
+                {
+                    return NotFound($"User with ID {Id} not found");
+                }
+
+                var shelterStaffDto = shelterStaff.ToshelterstaffRetrieve();
+                return Ok(shelterStaffDto);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "An error occurred while processing your request");
+            }
+        }
+        [Authorize(Roles = "Admin")]
+        [HttpDelete("{Id}")]
         public async Task<IActionResult> Delete(string Id)
         {
             var Shelterstaff = await _userManager.FindByIdAsync(Id);
-            await _userManager.DeleteAsync(Shelterstaff);   
+            await _userManager.DeleteAsync(Shelterstaff);
             return Ok("Delete successfully");
         }
 
-        //[Authorize(Roles ="Admin")]
-        [HttpPut("{Id:string}")]
-        public async Task<IActionResult> Update(string Id, [FromBody] ShelterStaffDto shelterStaffDto)
+        [Authorize(Roles = "Admin")]    
+        [HttpPut("Update/{Id}")]
+        public async Task<IActionResult> Update(string Id, [FromBody] UpdateShelterstaff shelterStaffDto)
         {
-            if (!ModelState.IsValid) {return BadRequest(ModelState);}   
+            if (!ModelState.IsValid) { return BadRequest(ModelState); }
             var Shelterstaff = await _userManager.FindByIdAsync(Id);
 
-            Shelterstaff.UserName=shelterStaffDto.UserName;
-            Shelterstaff.PhoneNumber=shelterStaffDto.PhoneNumber;
-            Shelterstaff.Email=shelterStaffDto.Email;
-            await _userManager.UpdateAsync(Shelterstaff);   
+            Shelterstaff.UserName = shelterStaffDto.UserName;
+            Shelterstaff.PhoneNumber = shelterStaffDto.PhoneNumber;
+            Shelterstaff.Email = shelterStaffDto.Email;
+            await _userManager.UpdateAsync(Shelterstaff);
             return Ok();
         }
 

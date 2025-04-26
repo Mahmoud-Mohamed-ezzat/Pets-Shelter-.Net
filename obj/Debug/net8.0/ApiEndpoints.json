@@ -1,15 +1,15 @@
 [
   {
     "ContainingType": "Animal2.Controllers.AccountController",
-    "Method": "RegisterAdopter",
-    "RelativePath": "api/account/RegisterAdopter",
+    "Method": "Login",
+    "RelativePath": "api/Account/LogIn",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "registermodel",
-        "Type": "Animal2.Dto.Account.RegisterDto",
+        "Name": "loginDto",
+        "Type": "Animal2.Dto.Account.LoginDto",
         "IsRequired": true
       }
     ],
@@ -17,15 +17,25 @@
   },
   {
     "ContainingType": "Animal2.Controllers.AccountController",
-    "Method": "RegisterShelterStaff",
-    "RelativePath": "api/account/RegisterShelterstaff",
+    "Method": "LogOut",
+    "RelativePath": "api/Account/LogOut",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Animal2.Controllers.AccountController",
+    "Method": "RegisterAdopter",
+    "RelativePath": "api/Account/RegisterAdopter",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Sheltermodel",
-        "Type": "Animal2.Dto.Account.ShelterStaffDto",
+        "Name": "registermodel",
+        "Type": "Animal2.Dto.Account.RegisterDto",
         "IsRequired": true
       }
     ],
@@ -109,11 +119,6 @@
         "IsRequired": true
       },
       {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
         "Name": "Name",
         "Type": "System.String",
         "IsRequired": false
@@ -127,19 +132,13 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Animal2.Controllers.CategoryController",
-    "Method": "Get",
-    "RelativePath": "api/Category",
+    "ContainingType": "Animal2.Controllers.BreedController",
+    "Method": "GetAll",
+    "RelativePath": "api/Breed/getall",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "search",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -212,6 +211,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Animal2.Controllers.CategoryController",
+    "Method": "Get",
+    "RelativePath": "api/Category/Get",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "search",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Animal2.Controllers.CategoryController",
+    "Method": "GetAll",
+    "RelativePath": "api/Category/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Animal2.Controllers.RequestsController",
     "Method": "GetAll",
     "RelativePath": "api/Requests",
@@ -245,6 +270,75 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Animal2.Controllers.ShelterStaffController",
+    "Method": "GetById",
+    "RelativePath": "api/ShelterStaff/{Id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Animal2.Controllers.ShelterStaffController",
+    "Method": "Delete",
+    "RelativePath": "api/ShelterStaff/{Id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Animal2.Controllers.ShelterStaffController",
+    "Method": "RegisterShelterStaff",
+    "RelativePath": "api/ShelterStaff/RegisterShelterstaff",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Sheltermodel",
+        "Type": "Animal2.Dto.Account.ShelterStaffDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Animal2.Controllers.ShelterStaffController",
+    "Method": "Update",
+    "RelativePath": "api/ShelterStaff/Update/{Id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "shelterStaffDto",
+        "Type": "Animal2.Dto.Account.UpdateShelterstaff",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

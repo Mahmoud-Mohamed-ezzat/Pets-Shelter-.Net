@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using Animal2.Migrations;
 using Animal2.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
@@ -16,24 +18,31 @@ namespace Animal2.Service
         private readonly IConfiguration _config;
         private readonly SymmetricSecurityKey _Key;
         private readonly UserManager<Customer> _userManager;
-        public TokenService(IConfiguration configuration, UserManager<Customer> _userManager)
+        public TokenService(IConfiguration configuration, UserManager<Customer> userManager)
         {
+            _userManager = userManager;
             _config = configuration;
             _Key= new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["JWT:SigningKey"]));
         }
 
-        public string CreateToken(Customer customer) {
+        public async  Task<string> CreateToken(Customer customer) {
+
+            var role = (await _userManager.GetRolesAsync(customer)).FirstOrDefault();
+
             var claims = new List<Claim> {
             new  Claim(JwtRegisteredClaimNames.Sub,customer.Id),
             new  Claim(JwtRegisteredClaimNames.GivenName,customer.UserName),
             new  Claim(JwtRegisteredClaimNames.Email,customer.Email),
             new  Claim(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString()),
+            new Claim(ClaimTypes.Role, role)
             };
+           
+
             var creds = new SigningCredentials(_Key, SecurityAlgorithms.HmacSha512Signature);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.Now.AddDays(7),
+                Expires = DateTime.Now.AddMinutes(30),
                 SigningCredentials = creds,
                 Issuer = _config["JWT:Issuer"],
                 Audience = _config["JWT:Audience"]
@@ -42,6 +51,7 @@ namespace Animal2.Service
             var   token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);
         }
+
        
     }
 }
