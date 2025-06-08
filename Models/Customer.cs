@@ -14,11 +14,12 @@ namespace Animal2.Models
         public virtual ICollection<Animal> AnimalsAsShelterStaff { get; set; } = new List<Animal>();
         public virtual ICollection<Animal> AnimalsAsAdopter { get; set; } = new List<Animal>();
         public virtual ICollection<Request> Requests { get; set; } = new List<Request>();
-        public virtual ICollection<Interview> InterviewsAsAdopter { get; set; } = new List<Interview>();
-        public virtual ICollection<Interview> InterviewsAsStaff { get; set; } = new List<Interview>();
+        public virtual ICollection<Message> SenderMessages { get; set; } = new List<Message>();
+        public virtual ICollection<Message> ReceiverMessages { get; set; } = new List<Message>();
+
         //public virtual ICollection<Shelter> Shelter{ get; set; }
-        
-        
+
+
 
     }
 }

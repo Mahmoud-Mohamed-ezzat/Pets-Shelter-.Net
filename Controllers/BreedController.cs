@@ -16,6 +16,7 @@ namespace Animal2.Controllers
         {
             _context = context;
         }
+
         [Authorize]
         [HttpGet("getall")]
         public async Task<IActionResult> GetAll()
@@ -28,11 +29,11 @@ namespace Animal2.Controllers
         [HttpGet]
         public async Task<IActionResult> Get(string search)
         {
-
-            var breeds= await _context.Breeds.Include(b => b.AnimalCategory).Where(b=>b.Name.Contains(search)).ToListAsync();   
+           var breeds= await _context.Breeds.Include(b => b.AnimalCategory).Where(b=>b.Name.Contains(search)).ToListAsync();   
            var BreedDto =breeds.Select(b=>b.ToBreedDto()).ToList();
-            return Ok(BreedDto);
+           return Ok(BreedDto);
         }
+
         [Authorize]
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetById(int id)
@@ -42,6 +43,7 @@ namespace Animal2.Controllers
             var breeddto=breed.ToBreedDto();
             return Ok(breeddto);
         }
+
         [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> CreateBreed([FromBody] CreateBreedDto breeddto)
@@ -51,6 +53,7 @@ namespace Animal2.Controllers
             await _context.SaveChangesAsync();
             return CreatedAtAction(nameof(GetById), new { id = BreedModel.Id }, BreedModel.Name);
         }
+
         [Authorize(Roles = "Admin")]
         [HttpDelete]
         [Route("{id:int}")]
@@ -63,6 +66,7 @@ namespace Animal2.Controllers
             await _context.SaveChangesAsync();
             return Ok();
         }
+
         [Authorize(Roles = "Admin")]
         [HttpPut]
         [Route("{id:int}")]

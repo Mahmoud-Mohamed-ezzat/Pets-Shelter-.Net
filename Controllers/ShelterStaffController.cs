@@ -10,7 +10,6 @@ namespace Animal2.Controllers
 {
 
 
-    //[Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class ShelterStaffController : ControllerBase
@@ -109,8 +108,9 @@ namespace Animal2.Controllers
             Shelterstaff.UserName = shelterStaffDto.UserName;
             Shelterstaff.PhoneNumber = shelterStaffDto.PhoneNumber;
             Shelterstaff.Email = shelterStaffDto.Email;
+            Shelterstaff.ShelterAddress = shelterStaffDto.ShelterAddress;
             await _userManager.UpdateAsync(Shelterstaff);
-            return Ok();
+            return Ok("Updated successfully");
         }
 
     }

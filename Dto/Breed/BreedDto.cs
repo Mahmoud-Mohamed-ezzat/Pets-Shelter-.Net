@@ -1,4 +1,5 @@
-﻿using Animal2.Models;
+﻿using Animal2.Dto.animal;
+using Animal2.Models;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Animal2.Dto.Breed

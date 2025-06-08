@@ -42,6 +42,203 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Animal2.Controllers.AnimalController",
+    "Method": "AddAnimal",
+    "RelativePath": "api/Animal",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "AnimalName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "AnimalGender",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "AnimalStatus",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "AnimalHistory",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ImageN",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Age",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "AnimalCategoryId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "ShelterStaffId",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "BreedId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Animal2.Controllers.AnimalController",
+    "Method": "GetOneAnimal",
+    "RelativePath": "api/Animal/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Animal2.Controllers.AnimalController",
+    "Method": "UpdateAnimal",
+    "RelativePath": "api/Animal/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "AnimalName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "AnimalStatus",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "AnimalHistory",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ImageN",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Image",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "Age",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Animal2.Controllers.AnimalController",
+    "Method": "DeleteAnimal",
+    "RelativePath": "api/Animal/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Animal2.Controllers.AnimalController",
+    "Method": "AllAnimals",
+    "RelativePath": "api/Animal/Adopter",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Animal2.Controllers.AnimalController",
+    "Method": "GetByBreed",
+    "RelativePath": "api/Animal/GetByBreed/{breed}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "breed",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Animal2.Controllers.AnimalController",
+    "Method": "GetByCategory",
+    "RelativePath": "api/Animal/GetByCategory/{category}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "category",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Animal2.Controllers.AnimalController",
+    "Method": "ShelterAnimals",
+    "RelativePath": "api/Animal/Shelter/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Animal2.Controllers.BreedController",
     "Method": "Get",
     "RelativePath": "api/Breed",
@@ -237,8 +434,113 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Animal2.Controllers.MessagesController",
+    "Method": "SendMessage",
+    "RelativePath": "api/Messages",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addMessageDto",
+        "Type": "Animal2.Dto.messages.AddMessageDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Animal2.Controllers.MessagesController",
+    "Method": "GetConversation",
+    "RelativePath": "api/Messages",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "otherUserId",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Animal2.Controllers.MessagesController",
+    "Method": "UpdateMessage",
+    "RelativePath": "api/Messages/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updateDto",
+        "Type": "Animal2.Dto.messages.UpdateMessageDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Animal2.Controllers.MessagesController",
+    "Method": "DeleteMessage",
+    "RelativePath": "api/Messages/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Animal2.Controllers.MessagesController",
+    "Method": "GetAdopters",
+    "RelativePath": "api/Messages/adopters",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Animal2.Controllers.MessagesController",
+    "Method": "GetShelters",
+    "RelativePath": "api/Messages/shelters",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Animal2.Controllers.RequestsController",
-    "Method": "GetAll",
+    "Method": "AddRequest",
+    "RelativePath": "api/Requests",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addRequestDto",
+        "Type": "Animal2.Dto.Requests.AddRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Animal2.Controllers.RequestsController",
+    "Method": "GetRequestsToAdmin",
     "RelativePath": "api/Requests",
     "HttpMethod": "GET",
     "IsController": true,
@@ -248,15 +550,68 @@
   },
   {
     "ContainingType": "Animal2.Controllers.RequestsController",
-    "Method": "GetOne",
-    "RelativePath": "api/Requests/{Id}",
+    "Method": "GetRequestsToadopter",
+    "RelativePath": "api/Requests/Adopter/{adopterId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
+        "Name": "adopterId",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Animal2.Controllers.RequestsController",
+    "Method": "ApproveRequest",
+    "RelativePath": "api/Requests/Approve/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "approveRequestDto",
+        "Type": "Animal2.Dto.Requests.ApproveRequestDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Animal2.Controllers.RequestsController",
+    "Method": "RejectRequest",
+    "RelativePath": "api/Requests/Reject/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Animal2.Controllers.RequestsController",
+    "Method": "GetRequestsToShelter",
+    "RelativePath": "api/Requests/Shelter/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],

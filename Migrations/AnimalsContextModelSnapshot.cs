@@ -33,8 +33,9 @@ namespace Animal2.Migrations
                     b.Property<string>("AdopterId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("Age")
-                        .HasColumnType("int");
+                    b.Property<string>("Age")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("AnimalCategoryId")
                         .HasColumnType("int");
@@ -59,7 +60,7 @@ namespace Animal2.Migrations
                         .HasMaxLength(150)
                         .HasColumnType("nvarchar(150)");
 
-                    b.Property<int>("BreedId")
+                    b.Property<int?>("BreedId")
                         .HasColumnType("int");
 
                     b.Property<string>("Image")
@@ -195,7 +196,7 @@ namespace Animal2.Migrations
                     b.ToTable("Customers", (string)null);
                 });
 
-            modelBuilder.Entity("Animal2.Models.Interview", b =>
+            modelBuilder.Entity("Animal2.Models.Message", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -203,25 +204,29 @@ namespace Animal2.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("AdopterId")
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsEdited")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("MessageContent")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ReceiverId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("InterviewDate")
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.Property<string>("ShelterStaffId")
-                        .IsRequired()
+                    b.Property<string>("SenderId")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AdopterId");
+                    b.HasIndex("ReceiverId");
 
-                    b.HasIndex("ShelterStaffId");
+                    b.HasIndex("SenderId");
 
-                    b.ToTable("Interview");
+                    b.ToTable("Messages");
                 });
 
             modelBuilder.Entity("Animal2.Models.Request", b =>
@@ -238,6 +243,9 @@ namespace Animal2.Migrations
 
                     b.Property<int>("AnimalId")
                         .HasColumnType("int");
+
+                    b.Property<DateOnly?>("InterviewDate")
+                        .HasColumnType("date");
 
                     b.Property<string>("Status")
                         .IsRequired()
@@ -431,19 +439,18 @@ namespace Animal2.Migrations
                     b.HasOne("Animal2.Models.AnimalCategory", "AnimalCategory")
                         .WithMany("Animal")
                         .HasForeignKey("AnimalCategoryId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Animal2.Models.Breed", "Breed")
                         .WithMany("Animals")
                         .HasForeignKey("BreedId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.HasOne("Animal2.Models.Customer", "ShelterStaff")
                         .WithMany("AnimalsAsShelterStaff")
                         .HasForeignKey("ShelterStaffId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
 
                     b.Navigation("Adopter");
@@ -460,7 +467,7 @@ namespace Animal2.Migrations
                     b.HasOne("Animal2.Models.AnimalCategory", "AnimalCategory")
                         .WithMany("Breed")
                         .HasForeignKey("AnimalCategoryId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.ClientCascade)
                         .IsRequired();
 
                     b.Navigation("AnimalCategory");
@@ -477,23 +484,19 @@ namespace Animal2.Migrations
                     b.Navigation("UserCategory");
                 });
 
-            modelBuilder.Entity("Animal2.Models.Interview", b =>
+            modelBuilder.Entity("Animal2.Models.Message", b =>
                 {
-                    b.HasOne("Animal2.Models.Customer", "Adopter")
-                        .WithMany("InterviewsAsAdopter")
-                        .HasForeignKey("AdopterId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                    b.HasOne("Animal2.Models.Customer", "Receiver")
+                        .WithMany("ReceiverMessages")
+                        .HasForeignKey("ReceiverId");
 
-                    b.HasOne("Animal2.Models.Customer", "ShelterStaff")
-                        .WithMany("InterviewsAsStaff")
-                        .HasForeignKey("ShelterStaffId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                    b.HasOne("Animal2.Models.Customer", "Sender")
+                        .WithMany("SenderMessages")
+                        .HasForeignKey("SenderId");
 
-                    b.Navigation("Adopter");
+                    b.Navigation("Receiver");
 
-                    b.Navigation("ShelterStaff");
+                    b.Navigation("Sender");
                 });
 
             modelBuilder.Entity("Animal2.Models.Request", b =>
@@ -501,13 +504,13 @@ namespace Animal2.Migrations
                     b.HasOne("Animal2.Models.Customer", "Adopter")
                         .WithMany("Requests")
                         .HasForeignKey("AdopterId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Animal2.Models.Animal", "Animal")
                         .WithMany("Requests")
                         .HasForeignKey("AnimalId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Adopter");
@@ -589,11 +592,11 @@ namespace Animal2.Migrations
 
                     b.Navigation("AnimalsAsShelterStaff");
 
-                    b.Navigation("InterviewsAsAdopter");
-
-                    b.Navigation("InterviewsAsStaff");
+                    b.Navigation("ReceiverMessages");
 
                     b.Navigation("Requests");
+
+                    b.Navigation("SenderMessages");
                 });
 
             modelBuilder.Entity("Animal2.Models.UserCategory", b =>

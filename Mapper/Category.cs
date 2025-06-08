@@ -14,7 +14,17 @@ namespace Animal2.Mapper
             {
                 Id = category.Id,
                 CategoryName = category.CategoryName,
+                animals=category.Animal.Select(a=>a.ToAnimalDto()).ToList(),
                 Breeds = category.Breed.Select(b=>b.ToBreedDto()).ToList(),
+            };
+
+        }  
+        public static CategoryDto toCategoryDto2(this AnimalCategory category)
+        {
+            return new CategoryDto
+            {
+                Id = category.Id,
+                CategoryName = category.CategoryName,
             };
 
         }

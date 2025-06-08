@@ -26,8 +26,8 @@ namespace Animal2.Controllers
         public async Task<IActionResult> GetAll()
         {
 
-            var Categories =await _context.AnimalCategories.Include(a=>a.Breed).ToListAsync();
-            var categoriesDto = Categories.Select(a => a.toCategoryDto());
+            var Categories =await _context.AnimalCategories.ToListAsync();
+            var categoriesDto = Categories.Select(a => a.toCategoryDto2());
             return Ok(categoriesDto);
         }
 
@@ -36,7 +36,7 @@ namespace Animal2.Controllers
         public async Task<IActionResult> Get(string search) // retrieve All Categories 
         {
 
-        var categories =await _context.AnimalCategories.Include(a=>a.Breed).Where(c=>c.CategoryName.Contains(search)).ToListAsync();
+        var categories =await _context.AnimalCategories.Include(a=>a.Breed).Include(a=>a.Animal).Where(c=>c.CategoryName.Contains(search)).ToListAsync();
             var categoriesDto = categories.Select(a => a.toCategoryDto());
 
             return Ok(categoriesDto);
@@ -48,11 +48,12 @@ namespace Animal2.Controllers
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            var category = await _context.AnimalCategories.Include(c=>c.Breed).FirstOrDefaultAsync(c => c.Id == id);
+            var category = await _context.AnimalCategories.Include(c=>c.Breed).Include(b=>b.Animal).FirstOrDefaultAsync(c => c.Id == id);
             if (category == null) { return NotFound(); }
+            var categoryDto = category.toCategoryDto();
             return Ok(category);
-
         }
+
         [Authorize(Roles = "Admin")]
         [HttpPost]
         public async Task<IActionResult> CreateCategory([FromBody] CreateCategoryDto category) // Create Category 
@@ -64,6 +65,7 @@ namespace Animal2.Controllers
             await _context.SaveChangesAsync();
             return CreatedAtAction(nameof(GetID), new { id = categorymodel.Id }, categorymodel.toCategoryDto());
         }
+
         [Authorize(Roles = "Admin")]
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> DeleteCategory(int id) // Delete Category

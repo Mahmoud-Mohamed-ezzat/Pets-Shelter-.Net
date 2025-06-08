@@ -55,6 +55,7 @@ namespace Animal2.Controllers
                             Email = Adopter.Email,
                             UserName = Adopter.UserName,
                             Token = await _Token.CreateToken(Adopter),
+                            Id=Adopter.Id,
                             Role = ["Adpter"]
 
                         });
@@ -63,7 +64,7 @@ namespace Animal2.Controllers
                 }
                 else
                 {
-                    return StatusCode(500, CreatedAdopter.Errors.ToString());
+                    return StatusCode(500,CreatedAdopter.Errors.ToString());
                 }
 
 
@@ -93,6 +94,7 @@ namespace Animal2.Controllers
                 {
                     UserName = customer.UserName,
                     Email = customer.Email,
+                    Id=customer.Id,
                     Token = await _Token.CreateToken(customer),
                     Role = await _userManager.GetRolesAsync(customer)
                 }

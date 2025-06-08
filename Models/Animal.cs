@@ -22,7 +22,7 @@ public partial class Animal
     public string AnimalHistory { get; set; }
     public string Image { get; set; }
 
-    public int Age { get; set; }
+    public string Age { get; set; }
 
      [ForeignKey("AnimalCategoryId")]
     public virtual AnimalCategory? AnimalCategory { get; set; }
@@ -32,14 +32,14 @@ public partial class Animal
     public virtual Customer? Adopter { get; set; }
 
     [ForeignKey("BreedId")]
-    public virtual Breed Breed {get; set; }
+    public virtual Breed ?Breed {get; set; }
     public int AnimalCategoryId { get; set; }
 
     public string ShelterStaffId { get; set; }
 
     public string? AdopterId { get; set; }
 
-    public int BreedId { get; set; }
+    public int? BreedId { get; set; }
 
     public virtual ICollection<Request> Requests { get; set; } = new List<Request>();
 

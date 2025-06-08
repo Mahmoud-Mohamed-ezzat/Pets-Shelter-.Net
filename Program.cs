@@ -1,4 +1,3 @@
-//using Animal2.Models;
 using Animal2.Models;
 using Animal2.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -11,20 +10,17 @@ using System.Text;
 using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.Configure<RouteOptions>(options =>
-{
-    options.ConstraintMap.Add("string", typeof(string));
-});
 
-// Add services to the container.
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<TokenService>();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(option =>
 {
     option.SwaggerDoc("v1", new OpenApiInfo { Title = "Demo API", Version = "v1" });
+    option.IgnoreObsoleteActions();
+    option.IgnoreObsoleteProperties();
+    option.CustomSchemaIds(type => type.FullName);
     option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         In = ParameterLocation.Header,
@@ -58,7 +54,6 @@ builder.Services.AddDbContext<AnimalsContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("conn"));
 }
 );
-
 builder.Services.AddIdentity<Customer, IdentityRole>(options =>
 {
     options.Password.RequireDigit = true;
@@ -68,8 +63,6 @@ builder.Services.AddIdentity<Customer, IdentityRole>(options =>
     options.Password.RequiredLength = 9;
 })
 .AddEntityFrameworkStores<AnimalsContext>();
-
-
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme =
@@ -93,18 +86,8 @@ builder.Services.AddAuthentication(options =>
     };
 });
 builder.Services.AddScoped<TokenService>();
-
-//builder.Services.AddCors(options =>     // For react
-//{
-//    options.AddPolicy("ReactPolicy", policy =>
-//    {
-//        policy.WithOrigins("http://localhost:5000") // React's  port
-//              .AllowAnyHeader()
-//              .AllowAnyMethod()
-//              .AllowCredentials();
-//    });
-//});
-
+builder.Services.AddSignalR();
+builder.Services.AddHttpContextAccessor();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -113,17 +96,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 app.UseHttpsRedirection();
-app.UseHttpsRedirection();
-//app.UseCors("ReactPolicy");
-//app.UseCors(x => x
-//     .AllowAnyMethod()
-//     .AllowAnyHeader()
-//     .AllowCredentials()
-//      //.WithOrigins("https://localhost:44351))
-//      .SetIsOriginAllowed(origin => true));
-
+app.UseCors(x => x
+     .AllowAnyMethod()
+     .AllowAnyHeader()
+     .AllowCredentials()
+     .SetIsOriginAllowed(origin => true));
+app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
