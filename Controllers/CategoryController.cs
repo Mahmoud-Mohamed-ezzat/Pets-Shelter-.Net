@@ -1,56 +1,47 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Animal2.Dto.Category;
 using Animal2.Mapper;
 using Animal2.Models;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
+using Animal2.Interface;
 
 namespace Animal2.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-
     public class CategoryController : ControllerBase   //this controller authorized to Admin Only 
     {
-
         private readonly AnimalsContext _context;
-
-        public CategoryController(AnimalsContext context)
+        private readonly ICategory _CategoryRepo;
+        public CategoryController(AnimalsContext context, ICategory CategoryRepo)
         {
             _context = context;
+            _CategoryRepo = CategoryRepo;
         }
-
         [Authorize]
-        [HttpGet ("GetAll")]
+        [HttpGet("GetAll")]
         public async Task<IActionResult> GetAll()
         {
-
-            var Categories =await _context.AnimalCategories.ToListAsync();
-            var categoriesDto = Categories.Select(a => a.toCategoryDto2());
-            return Ok(categoriesDto);
+            var Categories = await _CategoryRepo.GetAllAsync();
+            return Ok(Categories);
         }
 
         [Authorize]
         [HttpGet("Get")]
         public async Task<IActionResult> Get(string search) // retrieve All Categories 
         {
-
-        var categories =await _context.AnimalCategories.Include(a=>a.Breed).Include(a=>a.Animal).Where(c=>c.CategoryName.Contains(search)).ToListAsync();
-            var categoriesDto = categories.Select(a => a.toCategoryDto());
-
-            return Ok(categoriesDto);
-
+            var categories = await _CategoryRepo.GetALLBySearch(search);
+            return Ok(categories);
         }
+
         [Authorize]
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetID(int id) // retrieve All Categories 
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            var category = await _context.AnimalCategories.Include(c=>c.Breed).Include(b=>b.Animal).FirstOrDefaultAsync(c => c.Id == id);
+            var category = await _CategoryRepo.GetOneAsync(id);
             if (category == null) { return NotFound(); }
-            var categoryDto = category.toCategoryDto();
             return Ok(category);
         }
 
@@ -60,9 +51,7 @@ namespace Animal2.Controllers
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            var categorymodel = category.CreateCategoryDto();
-            await _context.AnimalCategories.AddAsync(categorymodel);
-            await _context.SaveChangesAsync();
+            var categorymodel = await _CategoryRepo.CreateCategory(category);
             return CreatedAtAction(nameof(GetID), new { id = categorymodel.Id }, categorymodel.toCategoryDto());
         }
 
@@ -72,12 +61,8 @@ namespace Animal2.Controllers
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            var category = await _context.AnimalCategories.FirstOrDefaultAsync(c => c.Id == id);
-            if (category == null) { return NotFound(); }
-            _context.AnimalCategories.Remove(category);
-            await _context.SaveChangesAsync();
+            var category = await _CategoryRepo.DeleteCategory(id);
             return Ok();
-
         }
         [Authorize(Roles = "Admin")]
         [HttpPut("{id:int}")]
@@ -85,13 +70,8 @@ namespace Animal2.Controllers
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
-            var category = await _context.AnimalCategories.FirstOrDefaultAsync(c => c.Id == id);
-            if (category == null) { return NotFound(); }
-
-            category.CategoryName = categoryDto.CategoryName;
-            await _context.SaveChangesAsync();
+            var category = await _CategoryRepo.UpdateCategory(id, categoryDto);
             return Ok(category.toCategoryDto());
         }
-
     }
 }

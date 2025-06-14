@@ -1,4 +1,8 @@
+//using Animal2.Models;
+using Animal2.Helper;
+using Animal2.Interface;
 using Animal2.Models;
+using Animal2.Repository;
 using Animal2.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -11,9 +15,20 @@ using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("ReactPolicy", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000", "http://localhost:3001")
+              .AllowAnyHeader()
+              .AllowAnyMethod()
+              .AllowCredentials();
+    });
+});
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<TokenService>();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(option =>
 {
@@ -56,6 +71,8 @@ builder.Services.AddDbContext<AnimalsContext>(option =>
 );
 builder.Services.AddIdentity<Customer, IdentityRole>(options =>
 {
+    options.User.AllowedUserNameCharacters =
+        "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+ ";
     options.Password.RequireDigit = true;
     options.Password.RequireLowercase = true;
     options.Password.RequireUppercase = true;
@@ -85,10 +102,16 @@ builder.Services.AddAuthentication(options =>
             Encoding.UTF8.GetBytes(builder.Configuration["JWT:SigningKey"])),
     };
 });
+
 builder.Services.AddScoped<TokenService>();
+builder.Services.AddScoped<IBreed,BreedRepository>();
+builder.Services.AddScoped<ICategory,CategoryRepo>();
+builder.Services.AddScoped<IRequest,RequestRepo>();
+builder.Services.AddScoped<IAnimal,AnimalRepo>();
 builder.Services.AddSignalR();
 builder.Services.AddHttpContextAccessor();
 var app = builder.Build();
+app.UseCors("ReactPolicy");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -97,13 +120,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 app.UseHttpsRedirection();
-app.UseCors(x => x
-     .AllowAnyMethod()
-     .AllowAnyHeader()
-     .AllowCredentials()
-     .SetIsOriginAllowed(origin => true));
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+app.MapHub<MessageHub>("/messageHub");
 app.Run();

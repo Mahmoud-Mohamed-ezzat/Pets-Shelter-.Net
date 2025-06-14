@@ -1,41 +1,61 @@
-﻿using Animal2.Models;
-using Microsoft.AspNetCore.SignalR;
+﻿using Microsoft.AspNetCore.SignalR;
+using Animal2.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
-namespace Animal2.Hubs
+public class MessageHub : Hub
 {
-    public class ChatHub : Hub
+    private readonly AnimalsContext _context;
+
+    public MessageHub(AnimalsContext context)
     {
-        private readonly AnimalsContext _context;
+        _context = context;
+    }
 
-        public ChatHub(AnimalsContext context)
+    public override async Task OnConnectedAsync()
+    {
+        await base.OnConnectedAsync();
+    }
+
+    public async Task JoinUserGroup(string userId)
+    {
+        await Groups.AddToGroupAsync(Context.ConnectionId, userId);
+    }
+
+    public async Task SendMessageToUser(string senderId, string receiverId, string messageContent)
+    {
+        var message = new Message
         {
-            _context = context;
-        }
+            SenderId = senderId,
+            ReceiverId = receiverId,
+            MessageContent = messageContent,
+            CreatedAt = DateTime.Now
+        };
+        _context.Messages.Add(message);
+        await _context.SaveChangesAsync();
+        await Clients.Group(receiverId).SendAsync("ReceiveMessage", message.Id, senderId, messageContent);
+    }
 
-        public async Task SendMessage(string senderId, string receiverId, string messageContent)
-        {
-            var Date = DateTime.Now;
-            var message = new Message
-            {
-                CreatedAt = Date,
-                SenderId = senderId,
-                ReceiverId = receiverId,
-                MessageContent = messageContent
-            };
+    public async Task EditMessage(int messageId, string newContent)
+    {
+        var message = await _context.Messages.FindAsync(messageId);
+        if (message == null) return;
+        message.MessageContent = newContent;
+        await _context.SaveChangesAsync();
 
-            _context.Messages.Add(message);
-            await _context.SaveChangesAsync();
-            List<string> Customers = new List<string>()
-            {
-                receiverId,senderId
-            };
+        await Clients.Users(message.SenderId, message.ReceiverId)
+                   .SendAsync("MessageEdited", messageId, newContent);
+    }
 
-            await Clients.Users(Customers).SendAsync("ReceiveMessage", message.Id, message.SenderId, message.ReceiverId, message.MessageContent, message.CreatedAt);
-        }
-        public override async Task OnConnectedAsync()
-        {
-            await base.OnConnectedAsync();
-        }
+    public async Task DeleteMessage(int messageId)
+    {
+        var message = await _context.Messages.FindAsync(messageId);
+        if (message == null) return;
+
+        _context.Messages.Remove(message);
+        await _context.SaveChangesAsync();
+
+        await Clients.Users(message.SenderId, message.ReceiverId)
+                   .SendAsync("MessageDeleted", messageId);
     }
 }
-

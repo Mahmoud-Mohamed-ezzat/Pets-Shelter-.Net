@@ -2,6 +2,7 @@
 using Animal2.Dto.Requests;
 using Animal2.Mapper;
 using Animal2.Models;
+using Animal2.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,37 +16,33 @@ namespace Animal2.Controllers
     {
 
         private readonly AnimalsContext _context;
-        public RequestsController(AnimalsContext context)
+        private readonly RequestRepo _requestRepo;
+        public RequestsController(AnimalsContext context, RequestRepo requestRepo)
         {
             _context = context;
+            _requestRepo = requestRepo;
         }
 
         [Authorize(Roles = "Adopter")]
         [HttpGet("Adopter/{adopterId}")] //authorized by adopter
         public async Task<IActionResult> GetRequestsToadopter(string adopterId)
         {
-            var requests = await _context.Requests.Include(a => a.Adopter).Include(b => b.Animal).ThenInclude(c => c.ShelterStaff).ToListAsync();
-            var adopterrequests = requests.Where(a => a.AdopterId == adopterId).ToList(); 
-            var adopterRequests = adopterrequests.Select(a => a.ToAdopterRequests());
+            var adopterRequests = await _requestRepo.GetRequestsToadopter(adopterId);
             return Ok(adopterRequests);
         }
-
         [Authorize(Roles = "Adopter")]
         [HttpPost]
         public async Task<IActionResult> AddRequest([FromBody] AddRequestDto addRequestDto) //authorized by adopter
         {
-            var request = addRequestDto.AddRequestDtoToRequest();
-            await _context.Requests.AddAsync(request);
-            await _context.SaveChangesAsync();
+            var request = await _requestRepo.AddRequest(addRequestDto);
             return Ok(request);
         }
 
         [Authorize(Roles = "Admin")]
         [HttpGet]
-        public async Task<IActionResult> GetRequestsToAdmin() //authorized by admin
+        public async Task<IActionResult> GetRequestsToAdmin() //authorized by admin his  id it's static in DB to be secure not passed it to API 
         {
-            var requests = await _context.Requests.Include(a => a.Animal).ThenInclude(b => b.ShelterStaff).Include(b => b.Adopter).ToListAsync();
-            var AdminRequests = requests.Select(a => a.RequestToAdminRequestDto()).ToList();
+            var AdminRequests = await _requestRepo.GetRequestsToAdmin();
             return Ok(AdminRequests);
         }
 
@@ -53,41 +50,24 @@ namespace Animal2.Controllers
         [HttpGet("Shelter/{id}")]
         public async Task<IActionResult> GetRequestsToShelter(string id) //authorized by shelter staff
         {
-            var requests = await _context.Requests.Include(a => a.Adopter).Include(b => b.Animal).ToListAsync();
-            var shelterRequests = requests.Where(a => a.Animal.ShelterStaffId == id && a.Status != "Rejected").ToList();
-            var ShelterRequests = shelterRequests.Select(a => a.RequestToShelterRequestDto());
-            return Ok(ShelterRequests);
+            var requests = await _requestRepo.GetRequestsToShelter(id);
+            return Ok(requests);
         }
 
         [Authorize(Roles = "Shelterstaff")]
         [HttpPut("Approve/{id}")]
         public async Task<IActionResult> ApproveRequest(int id, [FromBody] ApproveRequestDto approveRequestDto) //authorized by shelter staff
         {
-            var request = await _context.Requests.Include(a => a.Animal).Include(a=>a.Adopter).FirstOrDefaultAsync(a => a.Id == id);
-            if (request == null)
-            {
-                return NotFound();
-            }
-            request.Animal.AnimalStatus = "Not Available";
-            request.Status = "Approved";
-            request.InterviewDate = approveRequestDto.InterviewDate;
-            await _context.SaveChangesAsync();
-            return Ok(request.RequestToShelterRequestDto());
+            var request = await _requestRepo.ApproveRequest(id, approveRequestDto);
+            return Ok(request);
         }
 
         [Authorize(Roles = "Shelterstaff")]
         [HttpPut("Reject/{id}")]
         public async Task<IActionResult> RejectRequest(int id) //authorized by shelter staff
         {
-            var request = await _context.Requests.Include(a => a.Animal).ThenInclude(a => a.Adopter).FirstOrDefaultAsync(a => a.Id == id);
-            if (request == null)
-            {
-                return NotFound();
-            }
-            request.Status = "Rejected";
-            await _context.SaveChangesAsync();
-            return Ok(request.RequestToShelterRequestDto());
+            var request = await _requestRepo.RejectRequest(id);
+            return Ok(request);
         }
-
     }
 }

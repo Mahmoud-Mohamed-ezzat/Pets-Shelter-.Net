@@ -70,11 +70,6 @@
         "IsRequired": false
       },
       {
-        "Name": "ImageN",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
         "Name": "Image",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
@@ -143,11 +138,6 @@
       },
       {
         "Name": "AnimalHistory",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "ImageN",
         "Type": "System.String",
         "IsRequired": false
       },

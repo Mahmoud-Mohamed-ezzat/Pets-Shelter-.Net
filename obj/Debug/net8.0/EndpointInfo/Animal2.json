@@ -175,9 +175,6 @@
                   "AnimalHistory": {
                     "type": "string"
                   },
-                  "ImageN": {
-                    "type": "string"
-                  },
                   "Image": {
                     "type": "string",
                     "format": "binary"
@@ -195,9 +192,6 @@
                   "style": "form"
                 },
                 "AnimalHistory": {
-                  "style": "form"
-                },
-                "ImageN": {
                   "style": "form"
                 },
                 "Image": {
@@ -305,9 +299,6 @@
                   "AnimalHistory": {
                     "type": "string"
                   },
-                  "ImageN": {
-                    "type": "string"
-                  },
                   "Image": {
                     "type": "string",
                     "format": "binary"
@@ -339,9 +330,6 @@
                   "style": "form"
                 },
                 "AnimalHistory": {
-                  "style": "form"
-                },
-                "ImageN": {
                   "style": "form"
                 },
                 "Image": {

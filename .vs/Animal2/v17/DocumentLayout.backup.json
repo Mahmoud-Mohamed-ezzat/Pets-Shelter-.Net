@@ -3,84 +3,16 @@
   "WorkspaceRootPath": "E:\\IA\\Animal2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\repository\\animalrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:repository\\animalrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\mapper\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:mapper\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\dto\\animal\\createanimaldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:dto\\animal\\createanimaldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\dto\\animal\\updateanimaldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:dto\\animal\\updateanimaldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\mapper\\animals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:mapper\\animals.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\interface\\ianimal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:interface\\ianimal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\controllers\\animalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:controllers\\animalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\dto\\breed\\breeddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:dto\\breed\\breeddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\mapper\\breedmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:mapper\\breedmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\dto\\category\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:dto\\category\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\dto\\animal\\animaldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:dto\\animal\\animaldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\dto\\requests\\approverequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:dto\\requests\\approverequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\dto\\requests\\shelterrequestsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:dto\\requests\\shelterrequestsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\dto\\requests\\adopterrequests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:dto\\requests\\adopterrequests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\dto\\requests\\adminrequestsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:dto\\requests\\adminrequestsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\dto\\requests\\addrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:dto\\requests\\addrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\dto\\animal\\shelteranimalsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:dto\\animal\\shelteranimalsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\controllers\\breedcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:controllers\\breedcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\controllers\\requestscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:controllers\\requestscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\models\\animalscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:models\\animalscontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|e:\\ia\\animal2\\controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{237759C6-799B-453A-808C-24674C34F6C3}|Animal2.csproj|solutionrelative:controllers\\messagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -89,258 +21,51 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 2652,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 2047,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AnimalRepo.cs",
+              "DocumentMoniker": "E:\\IA\\Animal2\\Repository\\AnimalRepo.cs",
+              "RelativeDocumentMoniker": "Repository\\AnimalRepo.cs",
+              "ToolTip": "E:\\IA\\Animal2\\Repository\\AnimalRepo.cs",
+              "RelativeToolTip": "Repository\\AnimalRepo.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAYwHgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T15:08:16.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AnimalController.cs",
+              "DocumentMoniker": "E:\\IA\\Animal2\\Controllers\\AnimalController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AnimalController.cs",
+              "ToolTip": "E:\\IA\\Animal2\\Controllers\\AnimalController.cs",
+              "RelativeToolTip": "Controllers\\AnimalController.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAwE0AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T15:06:07.133Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CategoryController.cs",
-              "DocumentMoniker": "E:\\IA\\Animal2\\Controllers\\CategoryController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CategoryController.cs",
-              "ToolTip": "E:\\IA\\Animal2\\Controllers\\CategoryController.cs",
-              "RelativeToolTip": "Controllers\\CategoryController.cs",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAswFQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T22:54:41.467Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AnimalController.cs",
-              "DocumentMoniker": "E:\\IA\\Animal2\\Controllers\\AnimalController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AnimalController.cs",
-              "ToolTip": "E:\\IA\\Animal2\\Controllers\\AnimalController.cs",
-              "RelativeToolTip": "Controllers\\AnimalController.cs",
-              "ViewState": "AgIAAGoAAAAAAAAAAAAAAGoAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T19:29:39.858Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ApproveRequestDto.cs",
-              "DocumentMoniker": "E:\\IA\\Animal2\\Dto\\Requests\\ApproveRequestDto.cs",
-              "RelativeDocumentMoniker": "Dto\\Requests\\ApproveRequestDto.cs",
-              "ToolTip": "E:\\IA\\Animal2\\Dto\\Requests\\ApproveRequestDto.cs",
-              "RelativeToolTip": "Dto\\Requests\\ApproveRequestDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T22:49:46.946Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AdopterRequests.cs",
-              "DocumentMoniker": "E:\\IA\\Animal2\\Dto\\Requests\\AdopterRequests.cs",
-              "RelativeDocumentMoniker": "Dto\\Requests\\AdopterRequests.cs",
-              "ToolTip": "E:\\IA\\Animal2\\Dto\\Requests\\AdopterRequests.cs",
-              "RelativeToolTip": "Dto\\Requests\\AdopterRequests.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T22:49:32.995Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UpdateAnimalDto.cs",
-              "DocumentMoniker": "E:\\IA\\Animal2\\Dto\\animal\\UpdateAnimalDto.cs",
-              "RelativeDocumentMoniker": "Dto\\animal\\UpdateAnimalDto.cs",
-              "ToolTip": "E:\\IA\\Animal2\\Dto\\animal\\UpdateAnimalDto.cs",
-              "RelativeToolTip": "Dto\\animal\\UpdateAnimalDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T21:07:11.537Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Animals.cs",
-              "DocumentMoniker": "E:\\IA\\Animal2\\Mapper\\Animals.cs",
-              "RelativeDocumentMoniker": "Mapper\\Animals.cs",
-              "ToolTip": "E:\\IA\\Animal2\\Mapper\\Animals.cs",
-              "RelativeToolTip": "Mapper\\Animals.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAvwC4AAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T19:36:44.272Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CreateAnimalDto.cs",
-              "DocumentMoniker": "E:\\IA\\Animal2\\Dto\\animal\\CreateAnimalDto.cs",
-              "RelativeDocumentMoniker": "Dto\\animal\\CreateAnimalDto.cs",
-              "ToolTip": "E:\\IA\\Animal2\\Dto\\animal\\CreateAnimalDto.cs",
-              "RelativeToolTip": "Dto\\animal\\CreateAnimalDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T19:35:35.676Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Category.cs",
-              "DocumentMoniker": "E:\\IA\\Animal2\\Mapper\\Category.cs",
-              "RelativeDocumentMoniker": "Mapper\\Category.cs",
-              "ToolTip": "E:\\IA\\Animal2\\Mapper\\Category.cs",
-              "RelativeToolTip": "Mapper\\Category.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAOAAAAAAAAAA==",
+              "Title": "IAnimal.cs",
+              "DocumentMoniker": "E:\\IA\\Animal2\\Interface\\IAnimal.cs",
+              "RelativeDocumentMoniker": "Interface\\IAnimal.cs",
+              "ToolTip": "E:\\IA\\Animal2\\Interface\\IAnimal.cs",
+              "RelativeToolTip": "Interface\\IAnimal.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T22:55:05.328Z",
+              "WhenOpened": "2025-06-14T15:07:23.773Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CategoryDto.cs",
-              "DocumentMoniker": "E:\\IA\\Animal2\\Dto\\Category\\CategoryDto.cs",
-              "RelativeDocumentMoniker": "Dto\\Category\\CategoryDto.cs",
-              "ToolTip": "E:\\IA\\Animal2\\Dto\\Category\\CategoryDto.cs",
-              "RelativeToolTip": "Dto\\Category\\CategoryDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T23:11:21.027Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "BreedDto.cs",
-              "DocumentMoniker": "E:\\IA\\Animal2\\Dto\\Breed\\BreedDto.cs",
-              "RelativeDocumentMoniker": "Dto\\Breed\\BreedDto.cs",
-              "ToolTip": "E:\\IA\\Animal2\\Dto\\Breed\\BreedDto.cs",
-              "RelativeToolTip": "Dto\\Breed\\BreedDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T23:04:31.861Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "BreedMap.cs",
-              "DocumentMoniker": "E:\\IA\\Animal2\\Mapper\\BreedMap.cs",
-              "RelativeDocumentMoniker": "Mapper\\BreedMap.cs",
-              "ToolTip": "E:\\IA\\Animal2\\Mapper\\BreedMap.cs",
-              "RelativeToolTip": "Mapper\\BreedMap.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T22:31:57.545Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AnimalDto.cs",
-              "DocumentMoniker": "E:\\IA\\Animal2\\Dto\\animal\\AnimalDto.cs",
-              "RelativeDocumentMoniker": "Dto\\animal\\AnimalDto.cs",
-              "ToolTip": "E:\\IA\\Animal2\\Dto\\animal\\AnimalDto.cs",
-              "RelativeToolTip": "Dto\\animal\\AnimalDto.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T22:48:30.475Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ShelterRequestsDto.cs",
-              "DocumentMoniker": "E:\\IA\\Animal2\\Dto\\Requests\\ShelterRequestsDto.cs",
-              "RelativeDocumentMoniker": "Dto\\Requests\\ShelterRequestsDto.cs",
-              "ToolTip": "E:\\IA\\Animal2\\Dto\\Requests\\ShelterRequestsDto.cs",
-              "RelativeToolTip": "Dto\\Requests\\ShelterRequestsDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T22:49:35.877Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "AdminRequestsDto.cs",
-              "DocumentMoniker": "E:\\IA\\Animal2\\Dto\\Requests\\AdminRequestsDto.cs",
-              "RelativeDocumentMoniker": "Dto\\Requests\\AdminRequestsDto.cs",
-              "ToolTip": "E:\\IA\\Animal2\\Dto\\Requests\\AdminRequestsDto.cs",
-              "RelativeToolTip": "Dto\\Requests\\AdminRequestsDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T22:49:29.704Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "AddRequestDto.cs",
-              "DocumentMoniker": "E:\\IA\\Animal2\\Dto\\Requests\\AddRequestDto.cs",
-              "RelativeDocumentMoniker": "Dto\\Requests\\AddRequestDto.cs",
-              "ToolTip": "E:\\IA\\Animal2\\Dto\\Requests\\AddRequestDto.cs",
-              "RelativeToolTip": "Dto\\Requests\\AddRequestDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T22:49:26.245Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "ShelterAnimalsDto.cs",
-              "DocumentMoniker": "E:\\IA\\Animal2\\Dto\\animal\\ShelterAnimalsDto.cs",
-              "RelativeDocumentMoniker": "Dto\\animal\\ShelterAnimalsDto.cs",
-              "ToolTip": "E:\\IA\\Animal2\\Dto\\animal\\ShelterAnimalsDto.cs",
-              "RelativeToolTip": "Dto\\animal\\ShelterAnimalsDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T22:18:06.186Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "BreedController.cs",
-              "DocumentMoniker": "E:\\IA\\Animal2\\Controllers\\BreedController.cs",
-              "RelativeDocumentMoniker": "Controllers\\BreedController.cs",
-              "ToolTip": "E:\\IA\\Animal2\\Controllers\\BreedController.cs",
-              "RelativeToolTip": "Controllers\\BreedController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACEAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T19:31:46.074Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "RequestsController.cs",
-              "DocumentMoniker": "E:\\IA\\Animal2\\Controllers\\RequestsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\RequestsController.cs",
-              "ToolTip": "E:\\IA\\Animal2\\Controllers\\RequestsController.cs",
-              "RelativeToolTip": "Controllers\\RequestsController.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T19:31:27.629Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "MessagesController.cs",
-              "DocumentMoniker": "E:\\IA\\Animal2\\Controllers\\MessagesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\MessagesController.cs",
-              "ToolTip": "E:\\IA\\Animal2\\Controllers\\MessagesController.cs",
-              "RelativeToolTip": "Controllers\\MessagesController.cs",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T19:15:20.04Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "AnimalsContext.cs",
-              "DocumentMoniker": "E:\\IA\\Animal2\\Models\\AnimalsContext.cs",
-              "RelativeDocumentMoniker": "Models\\AnimalsContext.cs",
-              "ToolTip": "E:\\IA\\Animal2\\Models\\AnimalsContext.cs",
-              "RelativeToolTip": "Models\\AnimalsContext.cs",
-              "ViewState": "AgIAADgAAAAAAAAAAAAAwEEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-04T20:51:32.428Z"
             }
           ]
         },
@@ -351,6 +76,10 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             }
           ]
         }

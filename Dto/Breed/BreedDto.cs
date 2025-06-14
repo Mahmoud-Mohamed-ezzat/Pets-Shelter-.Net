@@ -9,5 +9,6 @@ namespace Animal2.Dto.Breed
         public int Id { get; set; }
         public string Name { get; set; }
         public int AnimalCategoryId { get; set; }
+        public string CategoryName { get; set; }
     }
 }

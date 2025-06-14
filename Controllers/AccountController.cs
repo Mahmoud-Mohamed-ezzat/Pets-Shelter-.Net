@@ -43,7 +43,6 @@ namespace Animal2.Controllers
                     UserCategoryId = 2,
                 };
                 var CreatedAdopter = await _userManager.CreateAsync(Adopter, registermodel.Password);
-                /* .CreateAsync(Adopter,registermodel.Password);*/
                 if (CreatedAdopter.Succeeded)
                 {
                     var RoleResult = await _userManager.AddToRoleAsync(Adopter, "Adopter");

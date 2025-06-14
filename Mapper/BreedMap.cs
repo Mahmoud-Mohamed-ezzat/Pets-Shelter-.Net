@@ -12,6 +12,7 @@ namespace Animal2.Mapper
                 Id = BreedModel.Id, 
                 Name = BreedModel.Name,
                 AnimalCategoryId = BreedModel.AnimalCategoryId,
+                CategoryName=BreedModel.AnimalCategory.CategoryName
             };
         }
         public static Breed CreateBreedDto(this CreateBreedDto breedDto) {
